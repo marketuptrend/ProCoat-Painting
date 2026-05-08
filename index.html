@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://d16ilfvy4mv02r.cloudfront.net/workspaces/ndbxFrrAi8taRVAPn9qyURj8HsuwsWl2/9ddc06b2-efd0-48e4-8acd-03d147f4069b/files/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProCoat Painting Co. | Lancaster, CA</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #222; background: #fff; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #1a3c6e;
+      --accent: #e87722;
+      --light: #f5f7fa;
+      --dark: #111827;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --border: #e5e7eb;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.10);
+      --transition: all 0.3s ease;
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw; height: 70px;
+      background: rgba(26,60,110,0.97);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      transition: var(--transition);
+    }
+    .navbar.scrolled { background: var(--primary); }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.35rem; font-weight: 800; color: var(--white); letter-spacing: 0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-logo .logo-icon {
+      width: 38px; height: 38px; background: var(--accent);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.88); font-size: 0.95rem; font-weight: 500;
+      padding: 6px 0; border-bottom: 2px solid transparent;
+      transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .nav-cta {
+      background: var(--accent) !important; color: var(--white) !important;
+      padding: 9px 22px !important; border-radius: 6px; border-bottom: none !important;
+      font-weight: 700 !important; letter-spacing: 0.3px;
+      box-shadow: 0 2px 8px rgba(232,119,34,0.3);
+    }
+    .nav-cta:hover { background: #d06010 !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+    .hamburger span { width: 26px; height: 3px; background: #fff; border-radius: 2px; transition: var(--transition); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0d2248 0%, #1a3c6e 50%, #0d2248 100%);
+    }
+    .hero-bg-canvas { position: absolute; inset: 0; z-index: 0; }
+    .hero-paint-splash {
+      position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.18;
+      animation: floatBlob 8s ease-in-out infinite alternate;
+    }
+    .hero-paint-splash:nth-child(1) { width: 420px; height: 420px; background: var(--accent); top: -80px; left: -100px; animation-delay: 0s; }
+    .hero-paint-splash:nth-child(2) { width: 300px; height: 300px; background: #3b82f6; bottom: -60px; right: 5%; animation-delay: 2s; }
+    .hero-paint-splash:nth-child(3) { width: 200px; height: 200px; background: #10b981; top: 40%; left: 60%; animation-delay: 4s; }
+    @keyframes floatBlob { from { transform: translate(0,0) scale(1); } to { transform: translate(30px,30px) scale(1.1); } }
+
+    .hero-content {
+      position: relative; z-index: 2; text-align: center;
+      padding: 0 6vw; max-width: 850px; margin: 0 auto;
+      margin-top: 70px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,119,34,0.18); border: 1px solid rgba(232,119,34,0.4);
+      color: #fbbf24; font-size: 0.85rem; font-weight: 600;
+      padding: 6px 16px; border-radius: 50px; margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+    .hero-badge::before { content: '●'; font-size: 0.5rem; animation: blink 1.4s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.15;
+      color: var(--white); margin-bottom: 1.2rem; letter-spacing: -0.5px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.78);
+      line-height: 1.7; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;
+    }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .btn-primary {
+      background: var(--accent); color: var(--white);
+      padding: 14px 34px; border-radius: 8px; font-weight: 700; font-size: 1rem;
+      box-shadow: 0 4px 18px rgba(232,119,34,0.4);
+      transition: var(--transition); cursor: pointer; border: none;
+    }
+    .btn-primary:hover { background: #d06010; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,119,34,0.5); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: 13px 30px; border-radius: 8px; font-weight: 700; font-size: 1rem;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: var(--transition); cursor: pointer;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    /* ===== PARTNER BANNER in HERO ===== */
+    .partner-banner {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      padding: 12px 24px; border-radius: 50px;
+      color: rgba(255,255,255,0.9); font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .partner-banner:hover { background: rgba(255,255,255,0.14); border-color: var(--accent); }
+    .partner-banner .partner-icon {
+      width: 32px; height: 32px; background: var(--accent);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+    }
+    .partner-banner strong { color: var(--accent); }
+    .partner-banner .partner-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); display: block; }
+    .partner-banner .arrow { font-size: 0.85rem; opacity: 0.7; }
+
+    .hero-stats {
+      display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 3.5rem; padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 2rem; font-weight: 900; color: var(--accent); }
+    .hero-stat .lbl { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 90px 6vw; }
+    .section-tag {
+      display: inline-block; background: rgba(232,119,34,0.12);
+      color: var(--accent); font-weight: 700; font-size: 0.8rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 50px; margin-bottom: 1rem;
+    }
+    .section-title { font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
+    .section-sub { color: var(--gray); font-size: 1rem; max-width: 560px; line-height: 1.7; }
+    .center { text-align: center; }
+    .center .section-sub { margin: 0 auto; }
+
+    /* ===== MARQUEE ===== */
+    .marquee-section { background: var(--primary); padding: 18px 0; overflow: hidden; }
+    .marquee-track { display: flex; gap: 3rem; animation: marquee 22s linear infinite; white-space: nowrap; }
+    .marquee-track span {
+      color: rgba(255,255,255,0.75); font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .marquee-track span::before { content: '🎨'; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ===== ABOUT ===== */
+    .about-section { background: var(--light); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-visual {
+      position: relative; border-radius: 18px; overflow: hidden;
+      background: linear-gradient(135deg, #1a3c6e 0%, #0d2248 100%);
+      min-height: 420px; display: flex; align-items: center; justify-content: center;
+    }
+    .paint-art {
+      width: 100%; height: 420px; position: relative; overflow: hidden;
+    }
+    .paint-roller-anim {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .paint-roller-anim .roller-emoji { font-size: 5rem; animation: bounce 2s ease-in-out infinite; display: block; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+    .paint-streaks { position: absolute; inset: 0; }
+    .streak {
+      position: absolute; border-radius: 6px; opacity: 0.22;
+      animation: growStreak 3s ease-in-out infinite alternate;
+    }
+    .streak:nth-child(1) { left: 8%; top: 15%; width: 12px; height: 70%; background: var(--accent); animation-delay: 0s; }
+    .streak:nth-child(2) { left: 22%; top: 5%; width: 10px; height: 55%; background: #3b82f6; animation-delay: 0.5s; }
+    .streak:nth-child(3) { right: 20%; top: 20%; width: 14px; height: 65%; background: #10b981; animation-delay: 1s; }
+    .streak:nth-child(4) { right: 8%; top: 10%; width: 10px; height: 50%; background: var(--accent); animation-delay: 1.5s; }
+    @keyframes growStreak { from { transform: scaleY(0.7); opacity: 0.15; } to { transform: scaleY(1); opacity: 0.35; } }
+
+    .about-badge {
+      position: absolute; bottom: 20px; right: 20px;
+      background: var(--accent); color: #fff;
+      padding: 12px 18px; border-radius: 12px;
+      font-weight: 800; font-size: 0.9rem; text-align: center; line-height: 1.3;
+      box-shadow: 0 4px 14px rgba(232,119,34,0.4);
+    }
+    .about-text .about-list { margin: 1.5rem 0; }
+    .about-text .about-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid var(--border);
+      font-size: 0.95rem; color: var(--gray); line-height: 1.5;
+    }
+    .about-text .about-list li .check { color: var(--accent); font-weight: 800; margin-top: 1px; }
+
+    /* ===== PRODUCTS ===== */
+    .products-section { background: #fff; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.8rem; margin-top: 3rem; }
+    .product-card {
+      background: var(--light); border-radius: var(--radius);
+      padding: 28px 24px; border: 1px solid var(--border);
+      transition: var(--transition); cursor: pointer; position: relative; overflow: hidden;
+    }
+    .product-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--accent); transform: scaleX(0); transition: var(--transition);
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+    .product-card:hover::before { transform: scaleX(1); }
+    .product-icon {
+      width: 54px; height: 54px; background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1rem;
+    }
+    .product-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); }
+    .product-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.6; margin-bottom: 1rem; }
+    .product-tag {
+      display: inline-block; background: rgba(26,60,110,0.08);
+      color: var(--primary); font-size: 0.75rem; font-weight: 600;
+      padding: 3px 10px; border-radius: 50px;
+    }
+    .product-price { font-size: 0.95rem; font-weight: 800; color: var(--accent); margin-top: 0.7rem; }
+
+    /* ===== SERVICES ===== */
+    .services-section { background: var(--light); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .service-card {
+      background: #fff; border-radius: var(--radius);
+      padding: 32px 28px; box-shadow: var(--shadow);
+      transition: var(--transition); cursor: pointer;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0,0,0,0.13); }
+    .service-num {
+      font-size: 2.5rem; font-weight: 900; color: rgba(232,119,34,0.15);
+      margin-bottom: 0.3rem; line-height: 1;
+    }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--dark); }
+    .service-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
+    .service-icon { font-size: 1.6rem; margin-bottom: 0.7rem; }
+
+    /* ===== WHY US ===== */
+    .why-section {
+      background: linear-gradient(135deg, var(--primary) 0%, #0d2248 100%);
+      color: var(--white); text-align: center;
+    }
+    .why-section .section-title { color: var(--white); }
+    .why-section .section-sub { color: rgba(255,255,255,0.7); }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3.5rem; }
+    .why-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius); padding: 30px 20px;
+      transition: var(--transition);
+    }
+    .why-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+    .why-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .why-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .why-card p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    /* ===== COLOR PALETTE ===== */
+    .colors-section { background: #fff; }
+    .colors-intro { max-width: 500px; }
+    .color-strip {
+      display: flex; gap: 0; border-radius: 12px; overflow: hidden;
+      box-shadow: var(--shadow); margin-top: 2.5rem; height: 100px;
+    }
+    .color-swatch { flex: 1; position: relative; cursor: pointer; transition: var(--transition); }
+    .color-swatch:hover { flex: 2; }
+    .color-swatch .swatch-name {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.85);
+      white-space: nowrap; opacity: 0; transition: var(--transition);
+    }
+    .color-swatch:hover .swatch-name { opacity: 1; }
+    .palette-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .palette-item {
+      border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+      cursor: pointer; transition: var(--transition);
+    }
+    .palette-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .palette-swatch { height: 80px; }
+    .palette-info { padding: 8px 10px; background: #fff; border: 1px solid var(--border); border-top: none; }
+    .palette-info p { font-size: 0.78rem; font-weight: 700; color: var(--dark); }
+    .palette-info span { font-size: 0.7rem; color: var(--gray); }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-section { background: var(--light); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .testimonial-card {
+      background: #fff; border-radius: var(--radius);
+      padding: 28px; box-shadow: var(--shadow); position: relative;
+      transition: var(--transition);
+    }
+    .testimonial-card:hover { transform: translateY(-4px); }
+    .testimonial-card .quote {
+      font-size: 3rem; color: var(--accent); line-height: 1;
+      position: absolute; top: 12px; right: 20px; opacity: 0.3;
+    }
+    .stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .testimonial-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.7; margin-bottom: 1.2rem; }
+    .reviewer { display: flex; align-items: center; gap: 10px; }
+    .reviewer-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 800; font-size: 0.95rem;
+    }
+    .reviewer-info p { font-size: 0.9rem; font-weight: 700; color: var(--dark); }
+    .reviewer-info span { font-size: 0.78rem; color: var(--gray); }
+
+    /* ===== GALLERY ===== */
+    .gallery-section { background: #fff; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 1rem; margin-top: 3rem;
+    }
+    .gallery-item {
+      border-radius: var(--radius); overflow: hidden; position: relative;
+      cursor: pointer; background: var(--light);
+      min-height: 180px; display: flex; align-items: center; justify-content: center;
+      transition: var(--transition);
+    }
+    .gallery-item:hover { transform: scale(1.02); box-shadow: var(--shadow); }
+    .gallery-item:nth-child(1) { grid-column: span 2; min-height: 260px; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .gallery-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      transition: var(--transition);
+    }
+    .gallery-item:hover .gallery-placeholder { transform: scale(1.05); }
+    .gallery-placeholder .gp-icon { font-size: 2.5rem; }
+    .gallery-placeholder p { font-size: 0.85rem; font-weight: 600; color: var(--gray); }
+    .g1 { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
+    .g2 { background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); }
+    .g3 { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); }
+    .g4 { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+    .g5 { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); }
+
+    /* ===== FAQ ===== */
+    .faq-section { background: var(--light); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3rem; }
+    .faq-item {
+      background: #fff; border-radius: var(--radius);
+      border: 1px solid var(--border); overflow: hidden;
+    }
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; cursor: pointer; font-weight: 600; font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .faq-question:hover { background: rgba(232,119,34,0.05); }
+    .faq-question .fq-icon { color: var(--accent); font-size: 1.2rem; transition: var(--transition); }
+    .faq-item.open .fq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s;
+      font-size: 0.9rem; color: var(--gray); line-height: 1.7;
+      padding: 0 22px;
+    }
+    .faq-item.open .faq-answer { max-height: 200px; padding: 0 22px 18px; }
+
+    /* ===== CONTACT ===== */
+    .contact-section { background: #fff; }
+    .contact-wrapper { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+    .contact-info h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--dark); }
+    .contact-detail {
+      display: flex; gap: 14px; margin-bottom: 1.4rem; align-items: flex-start;
+    }
+    .contact-detail .cd-icon {
+      width: 42px; height: 42px; min-width: 42px;
+      background: rgba(26,60,110,0.08); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .contact-detail .cd-text p { font-size: 0.78rem; color: var(--gray); margin-bottom: 2px; }
+    .contact-detail .cd-text strong { font-size: 0.95rem; color: var(--dark); }
+    .contact-form { background: var(--light); border-radius: 16px; padding: 36px; }
+    .contact-form h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--dark); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--dark); margin-bottom: 5px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
+      border-radius: 8px; font-size: 0.92rem; font-family: inherit;
+      transition: var(--transition); background: #fff;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(232,119,34,0.1);
+    }
+    .form-group textarea { min-height: 110px; resize: vertical; }
+    .form-submit {
+      width: 100%; background: var(--primary); color: #fff;
+      padding: 14px; border: none; border-radius: 8px;
+      font-weight: 700; font-size: 1rem; cursor: pointer;
+      transition: var(--transition); letter-spacing: 0.3px;
+    }
+    .form-submit:hover { background: var(--accent); transform: translateY(-1px); }
+
+    /* ===== MAP PLACEHOLDER ===== */
+    .map-placeholder {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      border-radius: 14px; height: 220px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 8px; margin-top: 2rem;
+      border: 1px solid var(--border);
+    }
+    .map-placeholder span { font-size: 2.5rem; }
+    .map-placeholder p { font-size: 0.88rem; color: var(--gray); font-weight: 600; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark); color: rgba(255,255,255,0.75);
+      padding: 60px 6vw 24px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand .nav-logo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.3rem; }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; transition: var(--transition); cursor: pointer;
+    }
+    .social-btn:hover { background: var(--accent); }
+    .footer-col h4 { color: var(--white); font-size: 0.95rem; font-weight: 700; margin-bottom: 1.2rem; }
+    .footer-col ul li { margin-bottom: 0.7rem; }
+    .footer-col ul li a { font-size: 0.87rem; transition: var(--transition); }
+    .footer-col ul li a:hover { color: var(--accent); padding-left: 4px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.82rem; }
+    .footer-bottom a { color: var(--accent); }
+
+    /* ===== SCROLL TO TOP ===== */
+    .scroll-top {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+      box-shadow: 0 4px 14px rgba(232,119,34,0.4);
+      opacity: 0; pointer-events: none; transition: var(--transition);
+      transform: translateY(10px);
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .scroll-top:hover { background: #d06010; }
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu {
+      position: fixed; top: 70px; left: 0; right: 0; z-index: 999;
+      background: var(--primary);
+      padding: 0 6vw 20px;
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    }
+    .mobile-menu.open { max-height: 400px; }
+    .mobile-menu a { display: block; padding: 12px 0; color: rgba(255,255,255,0.88); font-size: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 60px 5vw; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 1; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-stats { gap: 1.2rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <div class="logo-icon">🖌️</div>
+      ProCoat<span>Painting</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#colors">Colors</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#products" onclick="toggleMenu()">Products</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#colors" onclick="toggleMenu()">Colors</a>
+    <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+    <a href="#testimonials" onclick="toggleMenu()">Reviews</a>
+    <a href="#contact" onclick="toggleMenu()">Get a Quote</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-canvas">
+      <div class="hero-paint-splash"></div>
+      <div class="hero-paint-splash"></div>
+      <div class="hero-paint-splash"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">Lancaster, CA's #1 Painting Supplier</div>
+      <h1>Premium Paints &amp;<br><span>Home Painting Solutions</span></h1>
+      <p>Supplying professional-grade paints, primers, tools, and coatings to home painting services across Lancaster, CA and the Antelope Valley since 2004.</p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn-primary">Shop Products</a>
+        <a href="#contact" class="btn-outline">Request a Quote</a>
+      </div>
+
+      <!-- ✅ PARTNER BANNER — required external link stays in hero -->
+      <a href="https://xprorestorationlancaster.com/services/water-damage-restoration-in-lancaster/"
+         target="_blank" rel="noopener noreferrer" class="partner-banner">
+        <div class="partner-icon">🤝</div>
+        <div>
+          <span class="partner-label">Trusted Business Partner &amp; Dealer</span>
+          <strong>Xpro Restoration Lancaster</strong> — Water Damage Restoration
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">20+</div><div class="lbl">Years in Lancaster</div></div>
+        <div class="hero-stat"><div class="num">4,800+</div><div class="lbl">Projects Supplied</div></div>
+        <div class="hero-stat"><div class="num">300+</div><div class="lbl">Color Options</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="lbl">Satisfaction Rate</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Interior Paints</span>
+      <span>Exterior Coatings</span>
+      <span>Primers &amp; Sealers</span>
+      <span>Brushes &amp; Rollers</span>
+      <span>Spray Equipment</span>
+      <span>Wood Stains</span>
+      <span>Texture Paints</span>
+      <span>Epoxy Coatings</span>
+      <span>Lancaster, CA</span>
+      <!-- Duplicate for seamless loop -->
+      <span>Interior Paints</span>
+      <span>Exterior Coatings</span>
+      <span>Primers &amp; Sealers</span>
+      <span>Brushes &amp; Rollers</span>
+      <span>Spray Equipment</span>
+      <span>Wood Stains</span>
+      <span>Texture Paints</span>
+      <span>Epoxy Coatings</span>
+      <span>Lancaster, CA</span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about-section" id="about">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="paint-art">
+          <div class="paint-streaks">
+            <div class="streak"></div>
+            <div class="streak"></div>
+            <div class="streak"></div>
+            <div class="streak"></div>
+          </div>
+          <div class="paint-roller-anim">
+            <span class="roller-emoji">🖌️</span>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;margin-top:0.5rem;">Painting Lancaster Since 2004</p>
+          </div>
+        </div>
+        <div class="about-badge">⭐ 4.9 / 5<br><small style="font-weight:400;font-size:0.75rem">Google Reviews</small></div>
+      </div>
+      <div class="about-text">
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title">Lancaster's Most Trusted Paint Supplier</h2>
+        <p style="color:var(--gray);line-height:1.75;margin-bottom:1rem;">
+          ProCoat Painting Co. was founded in Lancaster, CA with one mission — to equip home painting professionals with the highest quality paints, coatings, and tools at the best value. We understand the unique demands of the desert climate and supply products engineered to withstand extreme heat, UV exposure, and dry conditions.
+        </p>
+        <p style="color:var(--gray);line-height:1.75;">
+          From independent painters to large residential contractors, we're the go-to wholesale and retail supplier in the Antelope Valley.
+        </p>
+        <ul class="about-list">
+          <li><span class="check">✔</span> Over 20 years supplying painting professionals in Lancaster, CA</li>
+          <li><span class="check">✔</span> Wholesale pricing for registered painting service providers</li>
+          <li><span class="check">✔</span> Exclusive brands and proprietary desert-grade formulations</li>
+          <li><span class="check">✔</span> Same-day pickup at our Lancaster warehouse</li>
+          <li><span class="check">✔</span> Expert color consultation and technical support</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:0.5rem;">Work With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="products-section" id="products">
+    <div class="center">
+      <div class="section-tag">Our Products</div>
+      <h2 class="section-title">Everything a Painter Needs</h2>
+      <p class="section-sub">Professional-grade products handpicked for home painting services in Southern California's desert climate.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="location.href='#'">
+        <div class="product-icon">🏠</div>
+        <h3>Interior Latex Paint</h3>
+        <p>Zero-VOC, low-odor premium interior paint with excellent coverage and washability for residential projects.</p>
+        <span class="product-tag">Best Seller</span>
+        <div class="product-price">From $34.99 / gallon</div>
+      </div>
+      <div class="product-card" onclick="location.href='#'">
+        <div class="product-icon">☀️</div>
+        <h3>Exterior Sun-Shield Coat</h3>
+        <p>UV-resistant, heat-reflective exterior coating engineered for Lancaster's intense desert sun. Lasts 15+ years.</p>
+        <span class="product-tag">Desert Grade</span>
+        <div class="product-price">From $44.99 / gallon</div>
+      </div>
+      <div class="product-card" onclick="location.href='#'">
+        <div class="product-icon">🛡️</div>
+        <h3>Premium Primers & Sealers</h3>
+        <p>Stain-blocking, adhesion-promoting primers for drywall, wood, masonry, and previously painted surfaces.</p>
+        <span class="product-tag">Professional</span>
+        <div class="product-price">From $28.99 / gallon</div>
+      </div>
+      <div class="product-card" onclick="location.href='#'">
+        <div class="product-icon">🔨</div>
+        <h3>Brushes, Rollers & Tools</h3>
+        <p>Contractor-grade applicators — synthetic brushes, microfiber rollers, edgers, trays, and tape for clean results.</p>
+        <span class="product-tag">Wholesale Available</span>
+        <div class="product-price">Sets from $12.99</div>
+      </div>
+      <div class="product-card" onclick="location.href='#'">
+        <div class="product-icon">💨</div>
+        <h3>Airless Spray Equipment</h3>
+        <p>Professional airless sprayers, HVLP systems, hoses, tips, and accessories for high-volume projects.</p>
+        <span class="product-tag">Rental Available</span>
+        <div class="product-price">From $189.99</div>
+      </div>
+      <div class="product-card" onclick="location.href='#'">
+        <div class="product-icon">🪵</div>
+        <h3>Wood Stains & Varnishes</h3>
+        <p>Interior and exterior wood stains, solid-color stains, clear sealers, and polyurethane finishes.</p>
+        <span class="product-tag">New Arrivals</span>
+        <div class="product-price">From $32.99 / gallon</div>
+      </div>
+      <div class="product-card" onclick="location.href='#'">
+        <div class="product-icon">🧱</div>
+        <h3>Masonry & Stucco Coatings</h3>
+        <p>Elastomeric, waterproof coatings for block walls, stucco, brick, and concrete surfaces. Resists cracking.</p>
+        <span class="product-tag">Popular</span>
+        <div class="product-price">From $52.99 / gallon</div>
+      </div>
+      <div class="product-card" onclick="location.href='#'">
+        <div class="product-icon">⚗️</div>
+        <h3>Epoxy Floor Coatings</h3>
+        <p>Two-part epoxy systems for garage floors, patios, commercial spaces — durable, chemical-resistant finishes.</p>
+        <span class="product-tag">Heavy-Duty</span>
+        <div class="product-price">Kits from $79.99</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services-section" id="services">
+    <div class="center">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Services for Painting Professionals</h2>
+      <p class="section-sub">We go beyond product supply — we're a full-service partner for painting businesses in Lancaster and the Antelope Valley.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">🏪</div>
+        <h3>Wholesale Supply Program</h3>
+        <p>Register as a trade professional and unlock contractor pricing on all products. Volume discounts available for bulk orders of 20+ gallons.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">🎨</div>
+        <h3>Color Matching & Consultation</h3>
+        <p>Our expert colorists can match any shade from any brand. Bring a chip, photo, or code — we'll dial it in perfectly with our spectrophotometer.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">🚚</div>
+        <h3>Local Delivery – Lancaster, CA</h3>
+        <p>We deliver directly to job sites across Lancaster, Palmdale, and the Antelope Valley. Schedule delivery at checkout for orders over $200.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-icon">🔧</div>
+        <h3>Equipment Rental & Repair</h3>
+        <p>Rent airless sprayers, scaffolding, and power washers by the day or week. We also service and repair most major sprayer brands on-site.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-icon">📚</div>
+        <h3>Pro Training Workshops</h3>
+        <p>Free monthly workshops at our Lancaster store covering application techniques, surface prep, color theory, and product best practices.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-icon">♻️</div>
+        <h3>Paint Recycling & Disposal</h3>
+        <p>Bring in unused or leftover paint — we handle compliant disposal and offer in-store credit toward your next purchase. Eco-friendly and easy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why-section">
+    <div class="center">
+      <div class="section-tag" style="background:rgba(255,255,255,0.12);color:#fbbf24;">Why ProCoat</div>
+      <h2 class="section-title">Why Lancaster Painters Choose Us</h2>
+      <p class="section-sub">We've built our reputation on quality products, honest service, and deep roots in the Lancaster community.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+        <h4>Desert-Tested Formulas</h4>
+        <p>Every product we carry is tested to perform in Lancaster's extreme heat, UV, and dry conditions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h4>Competitive Trade Pricing</h4>
+        <p>We offer genuine wholesale pricing with no hidden fees — saving painting businesses an average of 22%.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h4>Same-Day Availability</h4>
+        <p>All core products are always in stock at our Lancaster warehouse — ready for same-day pickup, no delays.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h4>Local Business Network</h4>
+        <p>We connect painters with trusted local partners like restoration, drywall, and flooring pros in the Valley.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎓</div>
+        <h4>Expert Advice On-Tap</h4>
+        <p>Our staff are certified painters — not just salespeople. Get real technical advice for your specific job.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌱</div>
+        <h4>Eco-Friendly Options</h4>
+        <p>Low-VOC, zero-VOC, and recycled paint lines available to meet California's strictest environmental standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COLOR PALETTE ===== -->
+  <section class="colors-section" id="colors">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+      <div class="colors-intro">
+        <div class="section-tag">Color Studio</div>
+        <h2 class="section-title">300+ Colors, Endless Possibilities</h2>
+        <p style="color:var(--gray);line-height:1.75;margin-bottom:1.5rem;">
+          Browse our curated collection of interior and exterior colors — from timeless neutrals to bold statements. Every shade is available in multiple finishes.
+        </p>
+        <a href="#" class="btn-primary" style="display:inline-block;">Browse Full Palette</a>
+      </div>
+      <div>
+        <div class="color-strip">
+          <div class="color-swatch" style="background:#f8f0e3;"><span class="swatch-name">Ivory Dream</span></div>
+          <div class="color-swatch" style="background:#d4b896;"><span class="swatch-name">Warm Sand</span></div>
+          <div class="color-swatch" style="background:#b8860b;"><span class="swatch-name">Desert Gold</span></div>
+          <div class="color-swatch" style="background:#8b4513;"><span class="swatch-name">Terracotta</span></div>
+          <div class="color-swatch" style="background:#1a3c6e;"><span class="swatch-name">Navy Deep</span></div>
+          <div class="color-swatch" style="background:#2e8b57;"><span class="swatch-name">Sage Grove</span></div>
+          <div class="color-swatch" style="background:#708090;"><span class="swatch-name">Slate Gray</span></div>
+          <div class="color-swatch" style="background:#2c2c2c;"><span class="swatch-name">Midnight</span></div>
+        </div>
+        <div class="palette-grid" style="margin-top:1.8rem;">
+          <div class="palette-item">
+            <div class="palette-swatch" style="background:#f0ebe3;"></div>
+            <div class="palette-info"><p>Antelope White</p><span>#F0EBE3</span></div>
+          </div>
+          <div class="palette-item">
+            <div class="palette-swatch" style="background:#c9a96e;"></div>
+            <div class="palette-info"><p>Canyon Clay</p><span>#C9A96E</span></div>
+          </div>
+          <div class="palette-item">
+            <div class="palette-swatch" style="background:#4a7c59;"></div>
+            <div class="palette-info"><p>Joshua Green</p><span>#4A7C59</span></div>
+          </div>
+          <div class="palette-item">
+            <div class="palette-swatch" style="background:#2563eb;"></div>
+            <div class="palette-info"><p>Sky Blue</p><span>#2563EB</span></div>
+          </div>
+          <div class="palette-item">
+            <div class="palette-swatch" style="background:#7c3aed;"></div>
+            <div class="palette-info"><p>Desert Bloom</p><span>#7C3AED</span></div>
+          </div>
+          <div class="palette-item">
+            <div class="palette-swatch" style="background:#e87722;"></div>
+            <div class="palette-info"><p>Sunset Blaze</p><span>#E87722</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="center">
+      <div class="section-tag">Reviews</div>
+      <h2 class="section-title">What Painters Say About Us</h2>
+      <p class="section-sub">Trusted by over 200 painting contractors and independent painters throughout Lancaster and the Antelope Valley.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>ProCoat is the only place I buy my paint. Their exterior Sun-Shield line has been outstanding on desert homes — colors stay vibrant and don't fade even after brutal summers.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">MR</div>
+          <div class="reviewer-info"><p>Mike Rodriguez</p><span>Rodriguez Painting Co., Lancaster</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>The wholesale pricing is unbeatable. I save hundreds every month compared to big box stores. The staff actually know what they're talking about too — real painters, not retail clerks.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SJ</div>
+          <div class="reviewer-info"><p>Sarah Johnson</p><span>SJ Interior Finishing, Palmdale</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>Their color matching service is incredible. I brought in a photo from my client and they matched it perfectly on the first try. Saved me a second trip and kept the client happy.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">DW</div>
+          <div class="reviewer-info"><p>David Whitmore</p><span>Whitmore Bros. Painting, Lancaster</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>I've been using ProCoat for 8 years. The local delivery to job sites saves me so much time. When I'm on a tight deadline, they always come through same-day. Couldn't run my business without them.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">TL</div>
+          <div class="reviewer-info"><p>Teresa Luna</p><span>Luna's Pro Paint Services, Lancaster</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>Attended one of their free workshops and it completely changed how I prep surfaces. The training they offer is honestly worth more than any YouTube video. Great team!</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">JC</div>
+          <div class="reviewer-info"><p>James Carter</p><span>Desert Fresh Painting, Quartz Hill</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote">"</span>
+        <div class="stars">★★★★★</div>
+        <p>The epoxy floor kits are top-notch. Completed three garage floors last month using ProCoat epoxy — all three clients are thrilled. Clean, durable, and the application was smooth as butter.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">AP</div>
+          <div class="reviewer-info"><p>Alex Papadopoulos</p><span>AV Floor Coatings, Antelope Valley</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery-section" id="gallery">
+    <div class="center">
+      <div class="section-tag">Project Gallery</div>
+      <h2 class="section-title">Painted with ProCoat Products</h2>
+      <p class="section-sub">Real projects completed by Lancaster painting professionals using our paints and supplies.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g1">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">🏠</span>
+          <p>Antelope Valley Residence — Full Exterior</p>
+        </div>
+      </div>
+      <div class="gallery-item g2">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">🛋️</span>
+          <p>Modern Interior — Living Room</p>
+        </div>
+      </div>
+      <div class="gallery-item g3">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">🪟</span>
+          <p>Desert Home — Trim & Accent Walls</p>
+        </div>
+      </div>
+      <div class="gallery-item g4">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">🏢</span>
+          <p>Commercial Building — Stucco Repaint</p>
+        </div>
+      </div>
+      <div class="gallery-item g5">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">🚗</span>
+          <p>Residential Garage — Epoxy Floor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="center">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Common questions from our painter clients and retail customers in Lancaster, CA.</p>
+    </div>
+    <div class="faq-grid" id="faqGrid">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Do you offer wholesale pricing for painting contractors?</span>
+          <span class="fq-icon">+</span>
+        </div>
+        <div class="faq-answer">Yes! Register as a trade professional at our Lancaster store and receive up to 30% off retail pricing. Volume discounts apply to orders of 20+ gallons. Bring your contractor license or business card to qualify.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Can you match any paint color from another brand?</span>
+          <span class="fq-icon">+</span>
+        </div>
+        <div class="faq-answer">Absolutely. Our in-store spectrophotometer can match any existing color — just bring a paint chip, sample board, or even a photo. We can match Benjamin Moore, Sherwin-Williams, Behr, and hundreds of other brands.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Do you deliver to job sites in Lancaster?</span>
+          <span class="fq-icon">+</span>
+        </div>
+        <div class="faq-answer">Yes! We offer local delivery to Lancaster, Palmdale, Quartz Hill, and surrounding Antelope Valley areas. Orders over $200 qualify for free delivery. Schedule at checkout or call us directly for same-day service.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>What paints do you recommend for Lancaster's hot climate?</span>
+          <span class="fq-icon">+</span>
+        </div>
+        <div class="faq-answer">We recommend our Exterior Sun-Shield Coat for all Lancaster exterior projects — it's UV-resistant, heat-reflective, and rated for temperatures up to 160°F. For stucco, our Elastomeric Masonry Coating is the best choice. Come in for a free consultation!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Do you rent spray equipment?</span>
+          <span class="fq-icon">+</span>
+        </div>
+        <div class="faq-answer">Yes! We rent airless sprayers (Graco, Titan), HVLP guns, and pressure washers by the day, weekend, or week. Equipment comes fully serviced and ready to use. A refundable deposit is required. Call ahead to reserve.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Are your paints California VOC compliant?</span>
+          <span class="fq-icon">+</span>
+        </div>
+        <div class="faq-answer">All paints we carry meet or exceed California CARB and SCAQMD VOC regulations. We also carry a full zero-VOC line for clients who want the most environmentally friendly option or have chemical sensitivities.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact-section" id="contact">
+    <div class="center" style="margin-bottom:3rem;">
+      <div class="section-tag">Contact Us</div>
+      <h2 class="section-title">Get in Touch or Request a Quote</h2>
+      <p class="section-sub">Visit our Lancaster store, give us a call, or fill out the form and we'll get back to you within 1 business day.</p>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Our Location & Contact Info</h3>
+        <div class="contact-detail">
+          <div class="cd-icon">📍</div>
+          <div class="cd-text">
+            <p>Address</p>
+            <strong>1248 W Ave K, Lancaster, CA 93534</strong>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">📞</div>
+          <div class="cd-text">
+            <p>Phone</p>
+            <strong>(661) 555-0147</strong>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">✉️</div>
+          <div class="cd-text">
+            <p>Email</p>
+            <strong>info@procoatpainting.com</strong>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">🕐</div>
+          <div class="cd-text">
+            <p>Store Hours</p>
+            <strong>Mon–Fri: 7am – 6pm &nbsp;|&nbsp; Sat: 8am – 4pm</strong>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <span>🗺️</span>
+          <p>Lancaster, CA 93534 — Antelope Valley</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Request a Quote or Ask a Question</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(661) 555-0000" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@paintingco.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Business / Company Name (optional)</label>
+          <input type="text" placeholder="Your Painting Business" />
+        </div>
+        <div class="form-group">
+          <label>What are you looking for?</label>
+          <select>
+            <option value="">Select a category...</option>
+            <option>Interior Paints</option>
+            <option>Exterior Coatings</option>
+            <option>Primers & Sealers</option>
+            <option>Tools & Equipment</option>
+            <option>Wholesale / Trade Account</option>
+            <option>Color Matching</option>
+            <option>Equipment Rental</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message / Project Details</label>
+          <textarea placeholder="Tell us about your project or the products you need..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(event)">Send Message →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:1rem;">
+          <div class="logo-icon">🖌️</div>
+          ProCoat<span>Painting</span>
+        </div>
+        <p>Lancaster, CA's premier paint supplier for home painting services. Professional-grade products at competitive wholesale pricing since 2004.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Interior Latex Paint</a></li>
+          <li><a href="#">Exterior Coatings</a></li>
+          <li><a href="#">Primers & Sealers</a></li>
+          <li><a href="#">Brushes & Rollers</a></li>
+          <li><a href="#">Spray Equipment</a></li>
+          <li><a href="#">Epoxy Floor Kits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Wholesale Program</a></li>
+          <li><a href="#">Color Matching</a></li>
+          <li><a href="#">Local Delivery</a></li>
+          <li><a href="#">Equipment Rental</a></li>
+          <li><a href="#">Pro Workshops</a></li>
+          <li><a href="#">Paint Recycling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 ProCoat Painting Co. | 1248 W Ave K, Lancaster, CA 93534 | All rights reserved.</p>
+      <p>Business Partner: <a href="https://xprorestorationlancaster.com/services/water-damage-restoration-in-lancaster/" target="_blank" rel="noopener noreferrer">Xpro Restoration Lancaster</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const ham = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+      ham.classList.toggle('active');
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: offset, behavior: 'smooth' });
+          const menu = document.getElementById('mobileMenu');
+          if (menu.classList.contains('open')) toggleMenu();
+        }
+      });
+    });
+
+    // FAQ accordion
+    function toggleFAQ(el) {
+      const item = el.parentElement;
+      const allItems = document.querySelectorAll('.faq-item');
+      allItems.forEach(i => { if (i !== item) i.classList.remove('open'); });
+      item.classList.toggle('open');
+    }
+
+    // Form submission handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target;
+      btn.textContent = '✓ Message Sent! We\'ll be in touch soon.';
+      btn.style.background = '#16a34a';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    }
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.product-card, .service-card, .testimonial-card, .why-card, .palette-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
